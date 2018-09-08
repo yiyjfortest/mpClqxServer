@@ -34,7 +34,7 @@ public class OperationUserServiceImpl implements OperationUserService {
 
         UserInfoExample example = new UserInfoExample();
         example.createCriteria().andStatusEqualTo(PARAMETER.NORMAL_STATUS).andNameEqualTo(userName);
-        example.setOrderByClause("create_date desc");
+        example.setOrderByClause("update_date desc");
         List<UserInfo> userInfoList = userInfoMapper.selectByExample(example);
 
         return userInfoList.isEmpty() ? new ArrayList<UserInfo>() : userInfoList;

@@ -31,6 +31,7 @@ public class GetAuthServiceImpl implements GetAuthService {
             UserInfo userInfo = new UserInfo();
             userInfo.setOpenId(openId);
             userInfo.setCreateDate(new Date());
+            userInfo.setUpdateDate(new Date());
             userInfo.setStatus(PARAMETER.NORMAL_STATUS);
             userInfoMapper.insertSelective(userInfo);
             return PARAMETER.COMMON_AUTH;
